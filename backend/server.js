@@ -23,8 +23,8 @@ app.use(bodyParser.json()); // Body parser middleware
 // }));
 
 const corsOptions = {
-  origin: ['https://quiz-app-mern-jet.vercel.app'], // Replace with your Vercel domain
-  methods: ['POST','GET','PUT', 'DELETE'],
+  origin: 'https://quiz-app-mern-propject-24r7.vercel.app', // Replace with your Vercel domain
+  methods: ['POST','GET'],
   credentials: true,
 };
 
