@@ -17,10 +17,18 @@ app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
 // Enable CORS (Cross-Origin Resource Sharing)
-app.use(cors({
-  origin: 'http://localhost:3000', // Update with your frontend URL
-  credentials: true // Enable credentials (cookies, authorization headers)
-}));
+// app.use(cors({
+//   origin: 'https://quiz-application-orpin-mu.vercel.app', // Update with your frontend URL
+//   credentials: true // Enable credentials (cookies, authorization headers)
+// }));
+
+const corsOptions = {
+  origin: 'https://quiz-application-orpin-mu.vercel.app',
+  methods: ['POST','GET'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // Session configuration
 app.use(session({
