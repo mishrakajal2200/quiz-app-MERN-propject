@@ -88,7 +88,7 @@ const Quiz = ({userId, testId}) => {
         }
 
         // Request the questions for the selected lessons
-        const response = await axios.post("http://localhost:5000/api/questions", {
+        const response = await axios.post("https://quiz-app-mern-propject.onrender.com/api/questions", {
           lessons: selectedLessons,
         });
 
@@ -185,151 +185,6 @@ const Quiz = ({userId, testId}) => {
     setSelectedAnswer(userAnswers[prevIndex]?.answer || null);
   };
 
-
-
-// const handleSubmit = async () => {
-//   setEndTime(Date.now());
-//   setQuizCompleted(true);
-//   calculateScore(); // Get the values returned from calculateScore
-
-//   const totalTime = Math.floor((Date.now() - startTime) / 1000); // Time in seconds
-//   const totalQuestions = questions.length;
-
-//   // Populate wrongAnswers correctly by filtering out wrong answers
-//   const wrongAnswers = userAnswers
-//     .filter(answer => {
-//       const question = questions.find(q => q._id === answer.questionId);
-//       return answer.answer !== question.correctAnswer; // Check if the answer is wrong
-//     })
-//     .map(answer => {
-//       const question = questions.find(q => q._id === answer.questionId);
-//       return {
-//         questionText: question.questionText,
-//         selectedAnswer: answer.answer,
-//         correctAnswer: question.correctAnswer,
-//       };
-//     });
-
-//   const notAttempted = userAnswers.filter(answer => answer.answer === "Not Attempted").length;
-//   const attemptedQuestions = totalQuestions - notAttempted;
-//   const token = localStorage.getItem('token');
-//   const username = localStorage.getItem("username");
-
-//   const quizResult = {
-//     username: username,
-//     totalQuestions: totalQuestions,
-//     attemptedQuestions: attemptedQuestions,
-//     correctAnswers: score,  // Ensure score is defined correctly
-//     wrongAnswers: wrongAnswers,  // Populate wrongAnswers here
-//     notAttempted: notAttempted,
-//     timeTaken: totalTime,
-//     cheatingAttempts: cheatingAttempts, // Ensure cheatingAttempts is properly defined
-//   };
-
-//   console.log('Result for UI:', quizResult);
-//   console.log('WhatsApp Data:', quizResult);
-
-//   const message = `
-//     Quiz Result for ${username}:
-//     Total Questions: ${totalQuestions}
-//     Correct Answers: ${score}
-//     Time Taken: ${totalTime}s
-//     Attempted: ${attemptedQuestions}
-//     Cheating Attempts: ${cheatingAttempts}
-//     Wrong Answers: ${wrongAnswers.length}
-//   `;
-
-//   try {
-//     const response = await fetch('http://localhost:5000/api/quiz/submit-quiz', {
-//       method: 'POST',
-//       headers: {
-//         'Authorization': `Bearer ${token}`,
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(quizResult),
-//     });
-
-//     const result = await response.json();
-//     if (response.ok) {
-//       console.log('Quiz result saved:', result);
-//       // Trigger SMS sending logic
-//       await fetch('http://localhost:5000/api/quiz/send-sms', {
-//         method: 'POST',
-//         headers: {
-//           'Authorization': `Bearer ${token}`,
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           message: message,
-//           phoneNumber: `whatsapp:+919321754089`,
-//         }),
-//       });
-//     } else {
-//       console.log('Error saving quiz result:', result);
-//     }
-//   } catch (error) {
-//     console.error('Error submitting quiz:', error);
-//   }
-// };
-
-
-// const calculateScore = () => {
-//   const correctAnswers = userAnswers.reduce((acc, { questionId, answer }) => {
-//     const question = questions.find((q) => q._id === questionId); // Use _id here
-//     if (answer === question.correctAnswer) {
-//       return acc + 1;
-//     } else {
-//       setWrongAnswers((prev) => [
-//         ...prev,
-//         { questionText: question.questionText, selectedAnswer: answer, correctAnswer: question.correctAnswer },
-//       ]);
-//       return acc;
-//     }
-//   }, 0);
-//   setScore(correctAnswers);
-// };
-
-// const calculateScore = () => {
-//   const wrongAnswers = [];
-
-//   // Calculate the score
-//   const correctAnswers = userAnswers.reduce((acc, { questionId, answer }) => {
-//     // Find the question corresponding to the answer
-//     const question = questions.find((q) => q._id === questionId); // Use _id to match the question
-    
-//     console.log(`Checking answer for questionId: ${questionId}`);
-//     console.log(`Selected answer: ${answer}, Correct answer: ${question.correctAnswer}`);
-    
-//     if (question) {
-//       // Compare the selected answer with the correct answer
-//       if (answer === question.correctAnswer) {
-//         console.log("Correct answer!");
-//         return acc + 1; // Increment score for correct answer
-//       } else {
-//         console.log("Wrong answer!");
-//         // If answer is incorrect, add to wrong answers array
-//         wrongAnswers.push({
-//           questionText: question.questionText,
-//           selectedAnswer: answer,
-//           correctAnswer: question.correctAnswer,
-//         });
-//         return acc; // Don't increment score for wrong answer
-//       }
-//     }
-
-//     return acc; // Return accumulated score
-//   }, 0);
-
-//   // Log the final score and wrong answers
-//   console.log('Final Score:', correctAnswers);
-//   console.log('Wrong Answers:', wrongAnswers);
-
-//   // Update state with the score and wrong answers
-//   setScore(correctAnswers);  // Set the calculated score
-//   setWrongAnswers(wrongAnswers); // Set the wrong answers
-// };
-
-
 const handleSubmit = async () => {
   setEndTime(Date.now());
   setQuizCompleted(true);
@@ -362,7 +217,7 @@ const handleSubmit = async () => {
   console.log('Sending result to backend:', quizResult); // Log to verify data
 
   try {
-    const response = await fetch('http://localhost:5000/api/quiz/submit-quiz', {
+    const response = await fetch('https://quiz-app-mern-propject.onrender.com/api/quiz/submit-quiz', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -376,7 +231,7 @@ const handleSubmit = async () => {
       console.log('Quiz result saved:', result);
 
       // Trigger SMS sending logic if needed
-      await fetch('http://localhost:5000/api/quiz/send-sms', {
+      await fetch('https://quiz-app-mern-propject.onrender.com/api/quiz/send-sms', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

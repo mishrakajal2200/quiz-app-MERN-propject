@@ -22,13 +22,13 @@ app.use(bodyParser.json()); // Body parser middleware
 //   credentials: true // Enable credentials (cookies, authorization headers)
 // }));
 
-const corsOptions = {
-  origin: 'https://quiz-app-mern-propject-24r7.vercel.app', // Replace with your Vercel domain
-  methods: ['POST','GET'],
-  credentials: true,
-};
 
-app.use(cors(corsOptions));
+
+app.use(cors({
+  origin:["https://dev-sir-quiz.vercel.app"],
+  methods:["POST","GET"],
+  credentials:true
+}));
 
 // Session configuration
 app.use(session({

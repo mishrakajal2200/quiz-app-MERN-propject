@@ -30,9 +30,9 @@ const Login = ({ setAuthData }) => {
     }
 
     setIsLoading(true);
-    const API_BASE_URL = process.env.REACT_APP_API_URL;
+   
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/login`, formData);
+      const response = await axios.post('https://quiz-app-mern-propject.onrender.com/api/login', formData);
 
       // Store token and username in localStorage
       localStorage.setItem('token', response.data.token);
