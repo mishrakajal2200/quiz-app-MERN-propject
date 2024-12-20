@@ -38,7 +38,7 @@ const Signup = ({ setAuthData }) => {
 
     setIsLoading(true);
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+    const API_BASE_URL = process.env.REACT_APP_API_URL;
     try {
       const response = await axios.post(`${API_BASE_URL}/api/signup`, formData);
       localStorage.setItem('token', response.data.token);

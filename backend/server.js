@@ -23,7 +23,7 @@ app.use(bodyParser.json()); // Body parser middleware
 // }));
 
 const corsOptions = {
-  origin: ['https://your-frontend-vercel-url.vercel.app', 'http://localhost:3000'], // Replace with your Vercel domain
+  origin: ['https://quiz-app-mern-jet.vercel.app'], // Replace with your Vercel domain
   methods: ['POST','GET','PUT', 'DELETE'],
   credentials: true,
 };
@@ -32,16 +32,15 @@ app.use(cors(corsOptions));
 
 // Session configuration
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key', // Use a secure secret in production
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
   resave: false,
   saveUninitialized: true,
   cookie: {
-    httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-    secure: false,  // Set to true in production with HTTPS
-    sameSite: 'None' // Set to 'Lax' or 'Strict' if you don’t need cross-site cookies
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+    sameSite: 'None', // Allow cross-origin cookies
   },
 }));
-
 // Import routes
 const authRoutes = require('./routes/auth');
 const feedbackRoutes = require('./routes/feedbackRoutes');
