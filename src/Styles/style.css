@@ -1,0 +1,21 @@
+
+/* body{
+    background-image: url("https://wallup.net/wp-content/uploads/2016/01/129463-3D-simple_background.jpg");
+} */
+body{
+    background-color:gray;
+}
+/* navbar contents start */
+.nav-link:hover{
+    background-color:rgb(30, 142, 30);
+    color:white;
+    border-radius: 5px;
+    
+}
+.navbar-nav .nav-item .nav-link {
+    display: inline-block; /* Prevent the link from stretching to full width */
+    padding: 0.5rem 1rem; /* Add some padding for better spacing */
+  }
+ /* navbar contents start */
+
+ /* home content start */

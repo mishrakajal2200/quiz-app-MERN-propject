@@ -1,0 +1,80 @@
+[
+  {
+    "lesson": "Heredity",
+    "questionText": "The term speciation was coined by",
+    "options": ["C. Darwin", "Lamarck", "F. Cook", "A. V. Leeuwenhoek"],
+    "correctAnswer": "F. Cook"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "If two pairs of characters are crossed in pea plants, then they show an independent inheritance because:",
+    "options": ["They are separate characters", "They are present on separate plants", "They are present on separate chromosomes", "Reproduction is of an asexual type"],
+    "correctAnswer": "They are present on separate chromosomes"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "The term used to express details of appearance or behaviour is:",
+    "options": ["Characteristic", "Relation", "Classification", "Life-cycle"],
+    "correctAnswer": "Characteristic"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "In humans, the sex of children is determined by",
+    "options": ["The chromosome inherited from mother", "Chromosomes present in non-reproductive cells", "The chromosome inherited from father", "Somatic cells"],
+    "correctAnswer": "The chromosome inherited from father"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "Gregor Mendel used ______________ plant for his experiments to study inheritance of traits.",
+    "options": ["Moong", "Gram", "Bean", "Pea"],
+    "correctAnswer": "Pea"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "A pea plant with round and yellow seeds (RRYY) is crossbred with another pea plant having wrinkled and green seeds (rryy). Among the offspring obtained in an F2 generation, plants with which traits were found to be maximum in number?",
+    "options": ["Wrinkled green seeds", "Round yellow seeds", "Round green seeds", "Wrinkled yellow seeds"],
+    "correctAnswer": "Round yellow seeds"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "The formation of new species is called genetic drift.",
+    "options": ["True", "False"],
+    "correctAnswer": "False"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "On which plant did Mendel conduct his experiments to study the mechanism of inheritance?",
+    "options": ["Moong", "Gram", "Bean", "Pea"],
+    "correctAnswer": "Pea"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "The characteristic which is visible in an organism is called its phenotype.",
+    "options": ["False", "True"],
+    "correctAnswer": "True"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "Genes are segments of:",
+    "options": ["RNA", "DNA", "Amino acids", "Chromosomes"],
+    "correctAnswer": "DNA"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "What is the genotypic ratio of plants in an F2 generation when a tall pea plant (TT) is crossed with a dwarf pea plant (tt)?",
+    "options": ["3(Tt) : 1(tt)", "1(TT) : 2(Tt) : 1(tt)", "3(TT) : 1(tt)", "1(Tt) : 2(TT) : 1(tt)"],
+    "correctAnswer": "1(TT) : 2(Tt) : 1(tt)"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "The ratio 3:1 is known as the dihybrid ratio.",
+    "options": ["True", "False"],
+    "correctAnswer": "False"
+  },
+  {
+    "lesson": "Heredity",
+    "questionText": "The hereditary unit of DNA is known as ____________.",
+    "options": ["Gene", "Chromosome", "Protein", "Trait"],
+    "correctAnswer": "Gene"
+  }
+]
