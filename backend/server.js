@@ -23,8 +23,8 @@ app.use(bodyParser.json()); // Body parser middleware
 // }));
 
 const corsOptions = {
-  origin: 'https://quiz-application-orpin-mu.vercel.app',
-  methods: ['POST','GET'],
+  origin: ['https://your-frontend-vercel-url.vercel.app', 'http://localhost:3000'], // Replace with your Vercel domain
+  methods: ['POST','GET','PUT', 'DELETE'],
   credentials: true,
 };
 

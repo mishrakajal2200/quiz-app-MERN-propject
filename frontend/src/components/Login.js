@@ -30,9 +30,9 @@ const Login = ({ setAuthData }) => {
     }
 
     setIsLoading(true);
-
+    const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
     try {
-      const response = await axios.post('http://localhost:5000/api/login', formData);
+      const response = await axios.post(`${API_BASE_URL}/api/login`, formData);
 
       // Store token and username in localStorage
       localStorage.setItem('token', response.data.token);
