@@ -32,7 +32,7 @@ const Login = ({ setAuthData }) => {
     setIsLoading(true);
    
     try {
-      const response = await axios.post('https://quiz-app-mern-propject.onrender.com/api/login', formData);
+      const response = await axios.post('https://quiz-server-nu.vercel.app/api/login', formData);
 
       // Store token and username in localStorage
       localStorage.setItem('token', response.data.token);

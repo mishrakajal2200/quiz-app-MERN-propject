@@ -1,13 +1,4 @@
-// const mongoose = require("mongoose");
 
-// const questionSchema = new mongoose.Schema({
-//     category: String,
-//     text: String,
-//     options: [String],
-//     correctAnswer: String,
-// });
-
-// module.exports = mongoose.model("QuestionModel", questionSchema);
 const mongoose = require('mongoose');
 
 const questionSchema = new mongoose.Schema({

@@ -75,13 +75,6 @@ if (!user) {
 });
 
 
-// Login route
-
-
-// // Get all questions
-// router.get("/", getQuestions);
-// // Add a question
-// router.post("/", addQuestion);
 
 // Sample logout route for session management
 router.post('/logout', (req, res) => {

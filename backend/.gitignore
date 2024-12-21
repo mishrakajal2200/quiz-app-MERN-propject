@@ -1,4 +1,38 @@
-# dependencies
+# Node.js dependencies
 /node_modules
 
+# Build artifacts (if applicable)
+/dist
+/build
+
+
+# Environment variables
 .env
+.env.*
+
+
+# Coverage reports
+/coverage
+*.lcov
+
+# Cache and temp files
+.nyc_output
+.tmp
+.DS_Store
+
+# Version control metadata
+*.swp
+*~
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Optional npm and yarn directories
+.npm
+.yarn-cache/
+.yarn/
+
+# Deployment-specific files
+.vercel/
+.netlify/
+.vercel

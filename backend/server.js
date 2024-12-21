@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const session = require('express-session'); // Import express-session
 const bodyParser = require('body-parser');
+const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -16,17 +17,17 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
-// Enable CORS (Cross-Origin Resource Sharing)
-// app.use(cors({
-//   origin: 'https://quiz-application-orpin-mu.vercel.app', // Update with your frontend URL
-//   credentials: true // Enable credentials (cookies, authorization headers)
-// }));
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+});
 
 app.use(cors({
-  origin:["https://dev-sir-quiz.vercel.app"],
-  methods:["POST","GET"],
+  origin:["https://quiz-client-ruby.vercel.app"],
+  methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }));
 

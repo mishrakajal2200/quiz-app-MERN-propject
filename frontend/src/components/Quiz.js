@@ -88,7 +88,7 @@ const Quiz = ({userId, testId}) => {
         }
 
         // Request the questions for the selected lessons
-        const response = await axios.post("https://quiz-app-mern-propject.onrender.com/api/questions", {
+        const response = await axios.post("http://localhost:5000/api/questions", {
           lessons: selectedLessons,
         });
 
@@ -217,7 +217,7 @@ const handleSubmit = async () => {
   console.log('Sending result to backend:', quizResult); // Log to verify data
 
   try {
-    const response = await fetch('https://quiz-app-mern-propject.onrender.com/api/quiz/submit-quiz', {
+    const response = await fetch('http://localhost:5000/api/quiz/submit-quiz', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -231,7 +231,7 @@ const handleSubmit = async () => {
       console.log('Quiz result saved:', result);
 
       // Trigger SMS sending logic if needed
-      await fetch('https://quiz-app-mern-propject.onrender.com/api/quiz/send-sms', {
+      await fetch('http://localhost:5000/api/quiz/send-sms', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
